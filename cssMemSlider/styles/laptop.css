@@ -1,0 +1,41 @@
+#slider {
+    width: 500px;
+    margin: auto;
+    background-color: black;
+}
+
+#slider-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.slide {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+.slide.without-money {
+    background-image: url("../assets/without-money.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.slide.doctors-advice {
+    background-image: url("../assets/doctors-advice.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.slide.dream-and-life {
+    background-image: url("../assets/dream-and-life.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.slide.youth-and-sex {
+    background-image: url("../assets/youth-and-sex.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
