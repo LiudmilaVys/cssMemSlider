@@ -1,0 +1,160 @@
+/* animation */
+@keyframes mem-flip {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes mem-note-flip {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+/* general */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#slider-wrapper {
+    width: 50vw;
+    height: 50vh;
+    background-color: black;
+}
+
+#slider {
+    position: relative;
+    height: -webkit-fill-available;
+    margin: 1rem;
+    padding: 0;
+    border-width: 0;
+    overflow: hidden;
+}
+
+.without-money {
+    background-image: url("../assets/without-money.jpg");
+}
+
+.doctors-advice {
+    background-image: url("../assets/doctors-advice.jpg");
+}
+
+.dream-and-life {
+    background-image: url("../assets/dream-and-life.jpg");
+}
+
+.youth-and-sex {
+    background-image: url("../assets/youth-and-sex.jpg");
+}
+
+/* hide default checkboxes */
+.slide {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* mem styles */
+.slide-img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70%;
+    width: 70%;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.slide:checked + .slide-img {
+    z-index: 1;
+    animation-name: mem-flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+}
+
+/* mem note styles*/
+.slide-text {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 65%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    color: wheat;
+    background-color: black;
+    overflow: hidden;
+    z-index: 0;
+}
+.slide-text span {
+    position: relative;
+}
+
+.slide:checked + .slide-img + .slide-text {
+    z-index: 1;
+}
+.slide:checked + .slide-img + .slide-text span {
+    animation-name: mem-note-flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+}
+
+/* controls */
+.custom-control {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-control:nth-of-type(1) {
+    right: 6rem;
+}
+.custom-control:nth-of-type(2) {
+    right: 4rem;
+}
+.custom-control:nth-of-type(3) {
+    right: 2rem;
+}
+
+/* custom radio button */
+.radio-btn {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: blue;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.custom-control:hover .radio-btn {
+    background-color: white;
+}
+
+.slide:checked + .slide-img + .slide-text + .custom-control .radio-btn {
+    border: 0.2rem solid blue;
+    background-color: black;
+}
+
+.slide:checked + .slide-img + .slide-text + .custom-control:hover .radio-btn {
+    border: 0.2rem solid white;
+    background-color: black;
+}
