@@ -1,3 +1,12 @@
+@keyframes flip {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 body {
     height: 100vh;
     display: flex;
@@ -11,15 +20,20 @@ body {
     height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: black;
+}
+
+.mem-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
 
 /* slides */
 /* Hide the browser's default checkbox */
 .slide {
-    position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
@@ -27,9 +41,13 @@ body {
 }
 
 .slide-img {
+    position: absolute;
     width: 300px;
     height: 300px;
-    display: none;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
 }
 
 .slide-text {
@@ -38,7 +56,9 @@ body {
 }
 
 .slide:checked + .slide-img {
-    display: block;
+    z-index: 1;
+    animation-name: flip;
+    animation-duration: 1s;
 }
 
 .slide:checked + .slide-text {
@@ -47,26 +67,18 @@ body {
 
 .without-money {
     background-image: url("../assets/without-money.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 .doctors-advice {
     background-image: url("../assets/doctors-advice.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 .dream-and-life {
     background-image: url("../assets/dream-and-life.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 .youth-and-sex {
     background-image: url("../assets/youth-and-sex.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 /* controls */
