@@ -10,14 +10,32 @@
 </head>
 
 <body>
-    <div id="slider">
+    <fieldset id="slider">
         <div id="slider-wrapper">
-            <div class="slide without-money"></div>
-            <div class="slide doctors-advice"></div>
-            <div class="slide dream-and-life"></div>
-            <div class="slide youth-and-sex"></div>
+            <input type="radio" id="without-money" class="slide" name="mem" checked>
+            <div class="slide-img without-money"></div>
+            <input type="radio" id="doctors-advice" class="slide" name="mem">
+            <div class="slide-img doctors-advice"></div>
+            <input type="radio" id="dream-and-life" class="slide" name="mem">
+            <div class="slide-img dream-and-life"></div>
+            <input type="radio" id="youth-and-sex" class="slide" name="mem">
+            <div class="slide-img youth-and-sex"></div>
         </div>
-    </div>
+        <div class="slider-controls">
+            <label class="custom-control" for="without-money">
+                <span class="radio-btn"></span>
+            </label>
+            <label class="custom-control" for="dream-and-life">
+                <span class="radio-btn"></span>
+            </label>
+            <label class="custom-control" for="youth-and-sex">
+                <span class="radio-btn"></span>
+            </label>
+            <label class="custom-control" for="doctors-advice">
+                <span class="radio-btn"></span>
+            </label>
+        </div>
+    </fieldset>
 </body>
 
 </html>
