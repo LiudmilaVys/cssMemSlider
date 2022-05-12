@@ -8,15 +8,12 @@ body {
 
 #slider {
     width: 50vw;
-    background-color: black;
-}
-
-#slider-wrapper {
-    width: 50vw;
     height: 50vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
 
 /* slides */
@@ -29,13 +26,22 @@ body {
     width: 0;
 }
 
-.slide ~ .slide-img {
+.slide-img {
     width: 300px;
     height: 300px;
     display: none;
 }
 
-.slide[checked] + .slide-img {
+.slide-text {
+    color: wheat;
+    display: none;
+}
+
+.slide:checked + .slide-img {
+    display: block;
+}
+
+.slide:checked + .slide-text {
     display: block;
 }
 
@@ -92,7 +98,7 @@ body {
     background-color: white;
 }
 
-.slider-wrapper .slide:checked ~ .slider-controls .custom-control .radio-btn {
+.slide:checked ~ .slider-controls .custom-control .radio-btn {
     border: 1px solid white;
     background-color: black;
 }
