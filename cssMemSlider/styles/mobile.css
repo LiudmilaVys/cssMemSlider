@@ -1,2 +1,15 @@
 @media screen and (max-width: 375px) {
+    .slide-img {
+        height: 30%;
+    }
+    /* mem note styles*/
+    .slide-text {
+        width: 100%;
+        font-size: 0.7em;
+    }
+
+    /* controls */
+    .custom-control {
+        top: 50%;
+    }
 }
