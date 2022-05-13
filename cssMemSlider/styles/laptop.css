@@ -136,45 +136,25 @@ body {
     right: 2rem;
 }
 
-/* Create a custom radio button */
+/* custom radio button */
 .radio-btn {
     height: 1.5rem;
     width: 1.5rem;
     background-color: blue;
     border-radius: 50%;
+    box-sizing: border-box;
 }
 
-/* On mouse-over */
 .custom-control:hover .radio-btn {
     background-color: white;
 }
 
-.slide:checked ~ .slider-controls .custom-control .radio-btn {
-    border: 1px solid white;
+.slide:checked + .slide-img + .slide-text + .custom-control .radio-btn {
+    border: 0.2rem solid blue;
     background-color: black;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
-.custom-control:after {
-    content: " ";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.custom-control input:checked ~ .radio-btn:after {
-    display: block;
-}
-
-/* Style the checkmark/indicator */
-.custom-control .radio-btn:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+.slide:checked + .slide-img + .slide-text + .custom-control:hover .radio-btn {
+    border: 0.2rem solid white;
+    background-color: black;
 }
