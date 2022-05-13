@@ -26,8 +26,10 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    border-width: 0;
+    flex-wrap: wrap;
+    gap: 4rem;
     overflow: hidden;
+    border-width: 0;
     order: -1;
 }
 
@@ -59,20 +61,64 @@ body {
 .slide-img {
     height: 45vh;
     width: 45vw;
-    display: none;
     background-color: var(--bg-color);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    opacity: 0;
 }
 
 #without-money:checked ~ #slider .slide-img.without-money {
-    display: block;
     animation-name: mem-flip;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
-    opacity: 1;
+}
+
+#doctors-advice:checked ~ #slider .slide-img.doctors-advice {
+    animation-name: mem-flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    margin-left: -100%;
+}
+#doctors-advice:checked ~ #slider .slide-img.without-money {
+    animation-name: go-out;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    opacity: 0;
+}
+
+#dream-and-life:checked ~ #slider .slide-img.dream-and-life {
+    animation-name: mem-flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    margin-left: -100%;
+}
+#dream-and-life:checked ~ #slider .slide-img.without-money {
+    display: none;
+}
+#dream-and-life:checked ~ #slider .slide-img.doctors-advice {
+    animation-name: go-out;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    opacity: 0;
+}
+
+#youth-and-sex:checked ~ #slider .slide-img.youth-and-sex {
+    animation-name: mem-flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    margin-left: -100%;
+}
+#youth-and-sex:checked ~ #slider .slide-img.without-money {
+    display: none;
+}
+#youth-and-sex:checked ~ #slider .slide-img.doctors-advice {
+    display: none;
+}
+#youth-and-sex:checked ~ #slider .slide-img.dream-and-life {
+    animation-name: go-out;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    opacity: 0;
 }
 
 /* mem note styles*/
