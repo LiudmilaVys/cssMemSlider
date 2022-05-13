@@ -1,13 +1,4 @@
-@keyframes mem-flip {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes mem-note-flip {
+@keyframes flip {
     from {
         transform: translateX(100%);
     }

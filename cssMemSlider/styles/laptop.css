@@ -15,7 +15,7 @@ body {
     height: 50vh;
     padding: 1rem;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
     flex-wrap: wrap;
     background-color: var(--bg-color);
 }
@@ -30,22 +30,22 @@ body {
     gap: 4rem;
     overflow: hidden;
     border-width: 0;
-    order: -1;
+    order: -2;
 }
 
-.without-money {
+.slide-img.without-money {
     background-image: url("../assets/without-money.jpg");
 }
 
-.doctors-advice {
+.slide-img.doctors-advice {
     background-image: url("../assets/doctors-advice.jpg");
 }
 
-.dream-and-life {
+.slide-img.dream-and-life {
     background-image: url("../assets/dream-and-life.jpg");
 }
 
-.youth-and-sex {
+.slide-img.youth-and-sex {
     background-image: url("../assets/youth-and-sex.jpg");
 }
 
@@ -68,13 +68,13 @@ body {
 }
 
 #without-money:checked ~ #slider .slide-img.without-money {
-    animation-name: mem-flip;
+    animation-name: flip;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
 }
 
 #doctors-advice:checked ~ #slider .slide-img.doctors-advice {
-    animation-name: mem-flip;
+    animation-name: flip;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
     margin-left: -100%;
@@ -87,7 +87,7 @@ body {
 }
 
 #dream-and-life:checked ~ #slider .slide-img.dream-and-life {
-    animation-name: mem-flip;
+    animation-name: flip;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
     margin-left: -100%;
@@ -103,7 +103,7 @@ body {
 }
 
 #youth-and-sex:checked ~ #slider .slide-img.youth-and-sex {
-    animation-name: mem-flip;
+    animation-name: flip;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
     margin-left: -100%;
@@ -122,10 +122,15 @@ body {
 }
 
 /* mem note styles*/
+#mem-notes {
+    max-width: 70%;
+    flex-grow: 1;
+    order: -1;
+    overflow: hidden;
+}
+
 .slide-text {
-    width: 65%;
-    height: 3rem;
-    display: flex;
+    display: none;
     align-items: center;
     color: var(--text-color);
     background-color: var(--bg-color);
@@ -133,14 +138,29 @@ body {
     font-family: Verdana, sans-serif;
     font-size: 1.2em;
     line-height: 1.5;
-    z-index: 0;
 }
 
-.slide:checked + .slide-img + .slide-text {
-    z-index: 1;
+#without-money:checked ~ #mem-notes .slide-text.without-money {
+    display: flex;
+    animation-name: flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
 }
-.slide:checked + .slide-img + .slide-text span {
-    animation-name: mem-note-flip;
+#doctors-advice:checked ~ #mem-notes .slide-text.doctors-advice {
+    display: flex;
+    animation-name: flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+}
+#dream-and-life:checked ~ #mem-notes .slide-text.dream-and-life {
+    display: flex;
+    animation-name: flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+}
+#youth-and-sex:checked ~ #mem-notes .slide-text.youth-and-sex {
+    display: flex;
+    animation-name: flip;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
 }
