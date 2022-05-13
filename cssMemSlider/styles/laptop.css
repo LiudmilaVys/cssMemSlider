@@ -1,21 +1,5 @@
-/* animation */
-@keyframes mem-flip {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-@keyframes mem-note-flip {
-    from {
-        left: 100%;
-    }
-    to {
-        left: 0;
-    }
-}
+@import "variables.css";
+@import "animation.css";
 
 /* general */
 body {
@@ -29,7 +13,8 @@ body {
 #slider-wrapper {
     width: 50vw;
     height: 50vh;
-    background-color: black;
+    background-color: var(--bg-color);
+    border-radius: 2%;
 }
 
 #slider {
@@ -72,7 +57,7 @@ body {
     transform: translateX(-50%);
     height: 70%;
     width: 70%;
-    background-color: black;
+    background-color: var(--bg-color);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
@@ -91,12 +76,15 @@ body {
     bottom: 0;
     margin: 0;
     width: 65%;
-    height: 2rem;
+    height: 3rem;
     display: flex;
     align-items: center;
-    color: wheat;
-    background-color: black;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     overflow: hidden;
+    font-family: Verdana, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5;
     z-index: 0;
 }
 .slide-text span {
@@ -140,21 +128,21 @@ body {
 .radio-btn {
     height: 1.5rem;
     width: 1.5rem;
-    background-color: blue;
+    background-color: var(--btn-color);
     border-radius: 50%;
     box-sizing: border-box;
 }
 
 .custom-control:hover .radio-btn {
-    background-color: white;
+    background-color: var(--btn-hovered-color);
 }
 
 .slide:checked + .slide-img + .slide-text + .custom-control .radio-btn {
-    border: 0.2rem solid blue;
-    background-color: black;
+    border: 0.2rem solid var(--btn-color);
+    background-color: var(--bg-color);
 }
 
 .slide:checked + .slide-img + .slide-text + .custom-control:hover .radio-btn {
-    border: 0.2rem solid white;
-    background-color: black;
+    border: 0.2rem solid var(--btn-hovered-color);
+    background-color: var(--bg-color);
 }
