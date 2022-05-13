@@ -3,7 +3,7 @@
         transform: translateX(100%);
     }
     to {
-        transform: translateX(0);
+        transform: translateX(-50%);
     }
 }
 
@@ -15,19 +15,18 @@ body {
     overflow: hidden;
 }
 
-#slider {
+#slider-wrapper {
     width: 50vw;
     height: 50vh;
-    display: flex;
-    flex-direction: column;
     background-color: black;
 }
 
-.mem-wrapper {
+#slider {
     position: relative;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+    height: -webkit-fill-available;
+    margin: 1rem;
+    padding: 0;
+    border-width: 0;
     overflow: hidden;
 }
 
@@ -42,27 +41,36 @@ body {
 
 .slide-img {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70%;
+    width: 70%;
     background-color: black;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     z-index: 0;
 }
 
 .slide-text {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 65%;
     color: wheat;
-    display: none;
+    z-index: 0;
 }
 
 .slide:checked + .slide-img {
     z-index: 1;
     animation-name: flip;
-    animation-duration: 1s;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
 }
 
-.slide:checked + .slide-text {
-    display: block;
+.slide:checked ~ .slide-text:first-of-type {
+    z-index: 1;
+    animation-name: flip;
+    animation-duration: 1s;
 }
 
 .without-money {
@@ -82,12 +90,10 @@ body {
 }
 
 /* controls */
-.slider-controls {
-    display: flex;
-    justify-content: flex-end;
-}
-
 .custom-control {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     width: 2rem;
     height: 2rem;
     display: flex;
@@ -95,6 +101,16 @@ body {
     align-items: center;
     cursor: pointer;
     user-select: none;
+}
+
+.custom-control:nth-of-type(1) {
+    right: 2rem;
+}
+.custom-control:nth-of-type(2) {
+    right: 4rem;
+}
+.custom-control:nth-of-type(3) {
+    right: 6rem;
 }
 
 /* Create a custom radio button */
