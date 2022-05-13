@@ -1,4 +1,5 @@
-@keyframes flip {
+/* animation */
+@keyframes mem-flip {
     from {
         transform: translateX(100%);
     }
@@ -7,6 +8,16 @@
     }
 }
 
+@keyframes mem-note-flip {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+/* general */
 body {
     height: 100vh;
     display: flex;
@@ -30,49 +41,6 @@ body {
     overflow: hidden;
 }
 
-/* slides */
-/* Hide the browser's default checkbox */
-.slide {
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.slide-img {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 70%;
-    width: 70%;
-    background-color: black;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 0;
-}
-
-.slide-text {
-    position: absolute;
-    bottom: 0;
-    margin: 0;
-    width: 65%;
-    color: wheat;
-    z-index: 0;
-}
-
-.slide:checked + .slide-img {
-    z-index: 1;
-    animation-name: flip;
-    animation-duration: 500ms;
-    animation-timing-function: ease-out;
-}
-
-.slide:checked ~ .slide-text:first-of-type {
-    z-index: 1;
-    animation-name: flip;
-    animation-duration: 1s;
-}
-
 .without-money {
     background-image: url("../assets/without-money.jpg");
 }
@@ -87,6 +55,61 @@ body {
 
 .youth-and-sex {
     background-image: url("../assets/youth-and-sex.jpg");
+}
+
+/* hide default checkboxes */
+.slide {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* mem styles */
+.slide-img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70%;
+    width: 70%;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.slide:checked + .slide-img {
+    z-index: 1;
+    animation-name: mem-flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+}
+
+/* mem note styles*/
+.slide-text {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 65%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    color: wheat;
+    background-color: black;
+    overflow: hidden;
+    z-index: 0;
+}
+.slide-text span {
+    position: relative;
+}
+
+.slide:checked + .slide-img + .slide-text {
+    z-index: 1;
+}
+.slide:checked + .slide-img + .slide-text span {
+    animation-name: mem-note-flip;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
 }
 
 /* controls */
@@ -104,13 +127,13 @@ body {
 }
 
 .custom-control:nth-of-type(1) {
-    right: 2rem;
+    right: 6rem;
 }
 .custom-control:nth-of-type(2) {
     right: 4rem;
 }
 .custom-control:nth-of-type(3) {
-    right: 6rem;
+    right: 2rem;
 }
 
 /* Create a custom radio button */
