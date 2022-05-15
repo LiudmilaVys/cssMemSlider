@@ -1,12 +1,19 @@
-@media screen and (max-width: 853px) {
-    .slide-text {
-        font-size: 1em;
-    }
-}
-
 @media screen and (max-width: 425px) {
     #slider-wrapper {
+        display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        height: 36vh;
+        min-height: 19rem;
+    }
+
+    #slider {
+        height: 62%;
+    }
+
+    #mem {
+        width: 12rem;
+        height: 12rem;
     }
 
     #mem-notes {
@@ -15,5 +22,26 @@
 
     .slide-text {
         font-size: 0.7em;
+    }
+
+    #doctors-advice:checked ~ #slider .slide-img.doctors-advice {
+        margin-left: -135%;
+    }
+    #doctors-advice:checked ~ #slider .slide-img.without-money {
+        margin-left: -2%;
+    }
+
+    #dream-and-life:checked ~ #slider .slide-img.dream-and-life {
+        margin-left: -135%;
+    }
+    #dream-and-life:checked ~ #slider .slide-img.doctors-advice {
+        margin-left: -4%;
+    }
+
+    #youth-and-sex:checked ~ #slider .slide-img.youth-and-sex {
+        margin-left: -135%;
+    }
+    #youth-and-sex:checked ~ #slider .slide-img.dream-and-life {
+        margin-left: -5%;
     }
 }
