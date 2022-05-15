@@ -1,14 +1,15 @@
 @media screen and (max-width: 425px) {
     #slider-wrapper {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        grid-template-columns: 1fr 2rem 2rem 2rem 2rem 1fr;
+        grid-template-rows: 14rem 1rem 1rem 1rem 1rem;
         height: 36vh;
         min-height: 19rem;
+        min-width: 12rem;
     }
 
     #slider {
-        height: 62%;
+        height: 85%;
+        grid-column-end: span 6;
     }
 
     #mem {
@@ -17,6 +18,8 @@
     }
 
     #mem-notes {
+        grid-column-end: span 6;
+        grid-row-start: 6;
         order: 0;
     }
 
@@ -43,5 +46,9 @@
     }
     #youth-and-sex:checked ~ #slider .slide-img.dream-and-life {
         margin-left: -5%;
+    }
+
+    .custom-control {
+        grid-row-start: 3;
     }
 }
