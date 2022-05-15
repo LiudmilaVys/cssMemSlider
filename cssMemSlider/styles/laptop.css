@@ -15,6 +15,7 @@ body {
     height: 50vh;
     padding: 1rem;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     flex-wrap: wrap;
     background-color: var(--bg-color);
@@ -24,13 +25,21 @@ body {
     height: 80%;
     width: 100%;
     padding: 0;
+    background-color: var(--btn-color);
+    border-width: 0;
+    order: -2;
+    overflow: hidden;
+}
+
+#mem {
+    height: 22rem;
+    width: 20rem;
+    margin: auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 4rem;
     overflow: hidden;
-    border-width: 0;
-    order: -2;
 }
 
 .slide-img.without-money {
@@ -51,7 +60,6 @@ body {
 
 /* hide default checkboxes */
 .slide {
-    opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
@@ -59,8 +67,8 @@ body {
 
 /* mem styles */
 .slide-img {
-    height: 45vh;
-    width: 45vw;
+    width: 100%;
+    height: 100%;
     background-color: var(--bg-color);
     background-repeat: no-repeat;
     background-size: contain;
@@ -77,36 +85,24 @@ body {
     animation-name: flip;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
-    margin-left: -100%;
-}
-#doctors-advice:checked ~ #slider .slide-img.without-money {
-    animation-name: go-out;
-    animation-duration: 500ms;
-    animation-timing-function: ease-out;
-    opacity: 0;
+    margin-left: -120%;
 }
 
 #dream-and-life:checked ~ #slider .slide-img.dream-and-life {
     animation-name: flip;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
-    margin-left: -100%;
+    margin-left: -120%;
 }
 #dream-and-life:checked ~ #slider .slide-img.without-money {
     display: none;
-}
-#dream-and-life:checked ~ #slider .slide-img.doctors-advice {
-    animation-name: go-out;
-    animation-duration: 500ms;
-    animation-timing-function: ease-out;
-    opacity: 0;
 }
 
 #youth-and-sex:checked ~ #slider .slide-img.youth-and-sex {
     animation-name: flip;
     animation-duration: 500ms;
     animation-timing-function: ease-out;
-    margin-left: -100%;
+    margin-left: -120%;
 }
 #youth-and-sex:checked ~ #slider .slide-img.without-money {
     display: none;
@@ -114,16 +110,9 @@ body {
 #youth-and-sex:checked ~ #slider .slide-img.doctors-advice {
     display: none;
 }
-#youth-and-sex:checked ~ #slider .slide-img.dream-and-life {
-    animation-name: go-out;
-    animation-duration: 500ms;
-    animation-timing-function: ease-out;
-    opacity: 0;
-}
 
 /* mem note styles*/
 #mem-notes {
-    max-width: 70%;
     flex-grow: 1;
     order: -1;
     overflow: hidden;

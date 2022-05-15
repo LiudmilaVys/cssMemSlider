@@ -1,15 +1,19 @@
-@media screen and (max-width: 375px) {
-    .slide-img {
-        height: 30%;
-    }
-    /* mem note styles*/
+@media screen and (max-width: 853px) {
     .slide-text {
-        width: 100%;
-        font-size: 0.7em;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #slider-wrapper {
+        justify-content: center;
     }
 
-    /* controls */
-    .custom-control {
-        top: 50%;
+    #mem-notes {
+        order: 0;
+    }
+
+    .slide-text {
+        font-size: 0.7em;
     }
 }

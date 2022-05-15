@@ -6,12 +6,3 @@
         transform: translateX(0);
     }
 }
-
-@keyframes go-out {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
